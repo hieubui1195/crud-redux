@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { editPost, deletePost } from '../actions/PostActions';
+import PropTypes from 'prop-types';
 
 class Post extends Component {
+    static propTypes = {
+        post: PropTypes.shape({
+            id: PropTypes.number,
+            title: PropTypes.string,
+            content: PropTypes.string
+        }).isRequired,
+        editPost: PropTypes.func.isRequired,
+        deletePost: PropTypes.func.isRequired
+    };
+
     render() {
         return (
             <div>
@@ -23,16 +32,4 @@ class Post extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        editPost: (id) => {
-            dispatch(editPost(id));
-        },
-
-        deletePost: (id) => {
-            dispatch(deletePost(id));
-        }
-    }
-};
-
-export default connect(null, mapDispatchToProps)(Post);
+export default Post;

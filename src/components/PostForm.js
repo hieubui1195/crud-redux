@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addPost } from '../actions/PostActions';
+import PropTypes from 'prop-types';
 
 class PostForm extends Component {
+    static propTypes = {
+        addPost: PropTypes.func.isRequired
+    }
+    
     render() {
         return (
             <div>

@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { updatePost } from '../actions/PostActions';
 
 class EditPost extends Component {
     render() {
-        const { updatePost } = this.props;
-        console.log(updatePost);
         return (
             <div>
                 <form onSubmit={ this.handleEdit }>
@@ -34,15 +30,6 @@ class EditPost extends Component {
         const newContent = this.getContent.value;
         this.props.updatePost(id, newTitle, newContent);
     }
-    
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        updatePost: (id, newTitle, newContent) => {
-            dispatch(updatePost(id, newTitle, newContent));
-        }
-    }
-};
-
-export default connect(null, mapDispatchToProps)(EditPost);
+export default EditPost;
