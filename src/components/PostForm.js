@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addPost } from '../actions/PostActions';
 
 class PostForm extends Component {
     render() {
@@ -25,14 +26,18 @@ class PostForm extends Component {
         e.preventDefault();
         const title = this.getTitle.value;
         const content = this.getContent.value;
-        this.props.dispatch({
-            type: 'ADD_POST',
-            title,
-            content
-        })
+        this.props.addPost(title, content);
         this.getTitle.value = '';
         this.getContent.value = '';
     }
 }
 
-export default connect()(PostForm);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addPost: (title, content) => {
+            dispatch(addPost(title, content));
+        }
+    }
+};
+
+export default connect(null, mapDispatchToProps)(PostForm);

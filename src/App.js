@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PostForm from './components/PostForm';
-import AllPost from './components/AllPost';
+import AllPostContainer from './containers/AllPostContainer';
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
           Hello
         </h1>
         <PostForm />
-        <AllPost />
+        <AllPostContainer />
       </div>
     );
   }
