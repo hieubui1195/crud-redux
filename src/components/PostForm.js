@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { addPost } from '../actions/PostActions';
 import PropTypes from 'prop-types';
 
 class PostForm extends Component {
     static propTypes = {
         addPost: PropTypes.func.isRequired
     }
-    
+
     render() {
         return (
             <div>
@@ -37,12 +35,4 @@ class PostForm extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addPost: (title, content) => {
-            dispatch(addPost(title, content));
-        }
-    }
-};
-
-export default connect(null, mapDispatchToProps)(PostForm);
+export default PostForm;

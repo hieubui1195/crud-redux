@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import PostForm from './components/PostForm';
 import AllPostContainer from './containers/AllPostContainer';
 import HOC from './components/HOC';
+import PostFormContainer from './containers/PostFormContainer';
 
 class App extends Component {
   render() {
-    console.log(this.props);
     return (
       <div className="App">
         <h1>
           Hello
         </h1>
-        <PostForm />
+        <PostFormContainer />
         <AllPostContainer />
         <HOC />
         
