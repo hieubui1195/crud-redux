@@ -33,7 +33,8 @@ const postReducer = (state = [], action) => {
                 } else {
                     return post;
                 }
-            })
+            });
+        
         default: 
             return state;
     }
