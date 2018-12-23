@@ -3,7 +3,6 @@ import AllPostContainer from './containers/AllPostContainer';
 import HOC from './components/HOC';
 import PostFormContainer from './containers/PostFormContainer';
 import Context from './components/ThemedButton';
-import MultiContext from './components/MultiContext';
 
 class App extends Component {
   render() {
@@ -16,7 +15,6 @@ class App extends Component {
         <AllPostContainer />
         <HOC />
         <Context />
-        {/* <MultiContext /> */}
       </div>
     );
   }
